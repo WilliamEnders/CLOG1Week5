@@ -25,6 +25,12 @@ public class moveFish : MonoBehaviour {
 				}
 			}else{
 				transform.position = ballPos.position;
+				if(transform.position.y >= 4f){
+					fishFocus = false;
+					ballPos.gameObject.GetComponent<moveSphere>().fishGrab = false;
+					ballPos.gameObject.GetComponent<moveSphere>().score++;
+					Destroy(gameObject);
+				}
 			}
 		} else {
 			transform.LookAt (new Vector3(100,randomY,0));

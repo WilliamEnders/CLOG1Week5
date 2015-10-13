@@ -8,8 +8,10 @@ public class moveSphere : MonoBehaviour {
 	public bool isCast;
 	public bool waterHit;
 	public bool fishGrab;
+	public int score;
 	// Use this for initialization
 	void Start () {
+		score = 0;
 		targetPos = GameObject.Find ("target").transform;
 		polePos = GameObject.Find ("poletop").transform;
 		isCast = false;
